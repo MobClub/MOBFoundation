@@ -166,13 +166,6 @@ typedef NS_ENUM(NSUInteger, MOBFIPVersion)
 + (NSString *)bssid;
 
 /**
- *  获取广告商ID
- *
- *  @return 广告商ID
- */
-+ (NSString *)idfa;
-
-/**
  *  获取当前语言
  *
  *  @return 语言描述
