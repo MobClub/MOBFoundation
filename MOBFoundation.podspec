@@ -8,6 +8,6 @@ s.homepage            = 'http://www.mob.com'
 s.source              = { :git => "https://github.com/ShareSDKPlatform/MOBFoundation.git", :tag => s.version.to_s }
 s.platform            = :ios, '8.0'
 s.frameworks          = "JavaScriptCore"
-s.libraries           = "z", "stdc++"
+s.libraries           = "z", "c++"
 s.vendored_frameworks = 'MOBFoundation.framework','MOBFoundationEx.framework'
 end
