@@ -9,5 +9,5 @@ s.source              = { :git => "https://github.com/ShareSDKPlatform/MOBFounda
 s.platform            = :ios, '8.0'
 s.frameworks          = "JavaScriptCore"
 s.libraries           = "z", "c++"
-s.vendored_frameworks = 'MOBFoundation.framework','MOBFoundationEx.framework'
+s.vendored_frameworks = 'MOBFoundation/MOBFoundation.framework','MOBFoundation/MOBFoundationEx.framework'
 end
