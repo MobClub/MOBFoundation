@@ -22,7 +22,7 @@
  *
  *  @return 图片服务实例
  */
-+ (instancetype)sharedInstance;
++ (nonnull MOBFImageGetter *)sharedInstance;
 
 /**
  初始化图片服务实例
