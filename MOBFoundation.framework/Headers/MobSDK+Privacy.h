@@ -16,12 +16,23 @@
 
 
 /**
- 获取用户隐私协议
+ 获取MobTech用户隐私协议
  
  @param type 协议类型 (1= url类型, 2=  富文本类型)
- @param data  title=标题,content=内容(type=1，返回url,type = 2时返回富文本)
+ @param completion 返回回调（data：字典类型 title=标题,content=内容(type=1，返回url,type = 2时返回富文本)       error:详细错误信息）
  */
 + (void)getPrivacyPolicy:(NSString * _Nullable)type
+             compeletion:(void (^ _Nullable)(NSDictionary * _Nullable data,NSError * _Nullable error))result DEPRECATED_MSG_ATTRIBUTE("use -[getPrivacyPolicy:language:compeletion:] method instead.");
+
+/**
+ 获取MobTech用户隐私协议
+ 
+ @param type 协议类型 (1= url类型, 2=  富文本类型)
+ @param language 隐私协议支持语言（）
+ @param completion 返回回调（data：字典类型 title=标题,content=内容(type=1，返回url,type = 2时返回富文本)       error:详细错误信息）
+ */
++ (void)getPrivacyPolicy:(NSString * _Nullable)type
+                language:(NSString * _Nullable)language
              compeletion:(void (^ _Nullable)(NSDictionary * _Nullable data,NSError * _Nullable error))result;
 
 /**
