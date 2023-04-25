@@ -185,4 +185,35 @@
 *  @return 本地国家码
 */
 + (NSString * _Nullable)localecountryCode;
+
+/**
+*  获取 app首次安装时间
+*
+*  @return app首次安装时间
+*/
++ (NSDate * _Nullable)installDate;
+
+
+/**
+*  获取当前进程的名称
+*
+*  @return 当前进程的名称
+*/
++ (NSString * _Nullable)processName;
+
+/**
+*  获取当前进程的唯一标识
+*
+*  @return 当前进程的唯一标识
+*/
++ (int)processIdentifier;
+
+
+/**
+*  获取父进程的唯一标识
+*
+*  @return父进程的唯一标识
+*/
++ (int)ppid;
+
 @end

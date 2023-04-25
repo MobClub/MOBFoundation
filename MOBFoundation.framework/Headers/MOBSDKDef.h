@@ -75,6 +75,22 @@ typedef NS_ENUM(NSUInteger, MOBFIPVersion)
 {
     MOBFIPVersion4 = 0,
     MOBFIPVersion6 = 1,
+    MOBFIPVersionAuto = 2
 };
+
+/**
+ 网络类型
+
+ - MOBFNetTypeAuto: 自动
+ - MOBFNetTypeWifi: wifi
+ - MOBFNetTypeCell: 蜂窝
+ */
+typedef NS_ENUM(NSUInteger, MOBFNetType)
+{
+    MOBFNetTypeWifi = 0,
+    MOBFNetTypeCell = 1,
+    MOBFNetTypeAuto = 2
+};
+
 
 #endif /* MOBSDKDef_h */

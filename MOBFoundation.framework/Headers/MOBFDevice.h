@@ -27,6 +27,7 @@ extern NSString *kMOBFReachabilityChangedNotification;
  */
 + (CTTelephonyNetworkInfo *)networkInfo;
 
+
 /**
  *  获取网卡物理地址
  *
@@ -49,11 +50,28 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (MOBFNetworkType)currentNetworkType;
 
 /**
+ *  获取当前网络类型
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 网络类型
+ */
++ (MOBFNetworkType)currentNetworkType:(BOOL)canCache;
+
+/**
  *  获取当前网络类型字符串
  *
  *  @return 网络类型
  */
 + (NSString *)currentNetworkTypeStr;
+
+/**
+ *  获取当前网络类型字符串
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 网络类型
+ */
++ (NSString *)currentNetworkTypeStr:(BOOL)canCache;
+
 
 /**
  *  获取手机运营商代码
@@ -63,11 +81,34 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (NSString *)carrier;
 
 /**
+ *  获取手机运营商代码
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 手机运营商代码
+ */
++ (NSString *)carrier:(BOOL)canCache;
+
+/**
  *  获取手机运营商信息
  *
  *  @return 手机运营商信息
  */
 + (CTCarrier *)curCarrier;
+
+/**
+ *  获取手机运营商信息
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 手机运营商信息
+ */
++ (CTCarrier *)curCarrier:(BOOL)canCache;
+
+/**
+ *  获取手机运营商信息-新生成，不使用缓存
+ *
+ *  @return 手机运营商信息
+ */
++ (CTCarrier *)curCarrierNew;
 
 /**
  *  获取手机运营商名称
@@ -77,6 +118,22 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (NSString *)carrierName;
 
 /**
+ *  获取手机运营商名称
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 运营商名称
+ */
++ (NSString *)carrierName:(BOOL)canCache;
+
+
+/**
+ *  获取手机运营商名称-指定CTCarrier
+ *
+ *  @return 运营商名称
+ */
++ (NSString *)carrierNameByCarrier:(CTCarrier*)carrier;
+
+/**
  *  获取手机运营商国家码
  *
  *  @return 运营商国家码
@@ -84,12 +141,40 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (NSString *)mobileCountryCode;
 
 /**
+ *  获取手机运营商国家码
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 运营商国家码
+ */
++ (NSString *)mobileCountryCode:(BOOL)canCache;
+
+/**
+ *  获取手机运营商国家码--指定CTCarrier
+ *
+ *  @return 运营商国家码
+ */
++ (NSString *)mobileCountryCodeByCarrier:(CTCarrier*)carrier;
+/**
  *  获取手机运营商网络编号
  *
  *  @return 运营商网络编号
  */
 + (NSString *)mobileNetworkCode;
 
+/**
+ *  获取手机运营商网络编号
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 运营商网络编号
+ */
++ (NSString *)mobileNetworkCode:(BOOL)canCache;
+
+/**
+ *  获取手机运营商网络编号--指定CTCarrier
+ *
+ *  @return 运营商网络编号
+ */
++ (NSString *)mobileNetworkCodeByCarrier:(CTCarrier*)carrier;
 /**
  *  与当前系统版本比较
  *
@@ -134,6 +219,15 @@ extern NSString *kMOBFReachabilityChangedNotification;
  */
 + (CGSize)nativeScreenSize;
 
+
+/**
+ *  获取屏幕真实尺寸
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 屏幕尺寸
+ */
++ (CGSize)nativeScreenSize:(BOOL)canCache;
+
 /**
  *  获取无线局域网的服务集标识（WIFI名称）
  *
@@ -141,12 +235,30 @@ extern NSString *kMOBFReachabilityChangedNotification;
  */
 + (NSString *)ssid;
 
+
+/**
+ *  获取无线局域网的服务集标识（WIFI名称）
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 服务集标识
+ */
++ (NSString *)ssid:(BOOL)canCache;
+
 /**
  *  获取基础服务集标识（站点的MAC地址）
  *
  *  @return 基础服务集标识
  */
 + (NSString *)bssid;
+
+
+/**
+ *  获取基础服务集标识（站点的MAC地址）
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 基础服务集标识
+ */
++ (NSString *)bssid:(BOOL)canCache;
 
 /**
  *  获取当前语言
@@ -164,11 +276,30 @@ extern NSString *kMOBFReachabilityChangedNotification;
 + (NSString *)ipAddress:(MOBFIPVersion)ver;
 
 /**
+ *  获取设备IP地址
+ *
+ *  @param ver 版本号
+ *  @param type 网络类型
+ *  @param canCache 使用冷启动后的缓存
+ *  @return IP地址
+ */
++ (NSString *)ipAddress:(MOBFIPVersion)ver netType:(MOBFNetType)type useCache:(BOOL)canCache;
+
+/**
  *  获取开发商ID
  *
  *  @return 开发商ID
  */
 + (NSString *)idfv;
+
+
+/**
+ *  获取开发商ID
+ *
+ *  @param canCache 使用冷启动后的缓存
+ *  @return 开发商ID
+ */
++ (NSString *)idfv:(BOOL)canCache;
 
 /**
  *  获取物理内存
@@ -240,5 +371,51 @@ extern NSString *kMOBFReachabilityChangedNotification;
 *  @return 机器名称
 */
 + (NSString *)machineName;
+
+/**
+*  是否连接usb
+*
+*  @return 是否连接usb
+*/
++ (BOOL)isConnUsb:(BOOL)canCache;
+
+/**
+*  是否可以充电
+*
+*  @return 是否可以充电
+*/
++ (BOOL)batteryMonitoringEnabled:(BOOL)canCache;
+
+
+/**
+*  是否模拟器
+*
+*  @return 是否模拟器
+*/
++ (BOOL)isSimulator;
+
+/**
+*  充电状态
+*
+*  @param canCache 使用冷启动后的缓存
+*  @return 充电状态
+*/
++ (UIDeviceBatteryState)batteryState:(BOOL)canCache;
+
+
+/**
+*  屏幕亮度
+*
+*  @param canCache 使用冷启动后的缓存
+*  @return 屏幕亮度
+*/
++ (CGFloat)screenBrightness:(BOOL)canCache;
+
+/**
+*  时区
+*
+*  @return 时区
+*/
++ (NSString*)timeZone;
 
 @end
